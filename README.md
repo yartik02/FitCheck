@@ -1,3 +1,12 @@
+![React](https://img.shields.io/badge/Frontend-React-blue)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-green)
+![Express](https://img.shields.io/badge/Backend-Express-black)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-darkgreen)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Gemini](https://img.shields.io/badge/LLM-Gemini-8E75B2)
+![Cloudinary](https://img.shields.io/badge/Storage-Cloudinary-blue)
+![License](https://img.shields.io/badge/License-MIT-yellow)
+
 # FitCheck
  
 **AI-powered resume intelligence platform — analyze, match, and prep for your target job.**
