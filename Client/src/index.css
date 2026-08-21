@@ -1,0 +1,174 @@
+@import "tailwindcss";
+
+:root {
+  /* Brand */
+  --primary: #235fe2;          /* Logo blue */
+  --primary-hover: #1d4ed8;
+  --primary-muted: rgba(37, 99, 235, 0.1);
+
+  /* Light Theme Foundations */
+  --bg-main: #ffffff;
+  --bg-surface: #f4f4f5;
+  --deep-bg: #f1f1f1;
+  --bg-heroSection:#ffffff;
+  
+  /* Text & Borders */
+  --text-main: #111827;
+  --text-muted: #6b7280;
+  --border: #e5e7eb;
+
+  /* Semantic (For your 0-100 radial gauge & chips) */
+  --score-high: #1c9750;       /* Green (75+) */
+  --score-medium: #f59e0b;     /* Amber (50-74) */
+  --score-low: #ef4444;        /* Red (<50) */
+
+  --tarob-green:#007244;
+}
+
+[data-theme="dark"] {
+  /* Dark Theme Foundations */
+  --bg-main: #000000;          /* Deepened slightly from #101010 for higher contrast */
+  --bg-surface: #171717;       /* Replaced #181818 to align with standard Zinc scaling */
+  --deep-bg: #050505;
+  --bg-heroSection: #000000;   /* Keeping your original banner color */
+
+  /* Text & Borders */
+  --text-main: #efefef;
+  --text-muted: #a1a1aa;
+  --border: #27272a;
+
+  /* Semantic adjustments for dark mode readability */
+  --score-high: #2e8452;
+  --score-medium: #d09a11;
+  --score-low: #f03232;
+
+  --tarob-green:oklch(0.7 0.17 162.48);
+}
+
+@theme {
+  /* Backgrounds */
+  --color-main: var(--bg-main);
+  --color-surface: var(--bg-surface);
+  --color-deep: var(--deep-bg);
+  --color-heroSectionBg: var(--bg-heroSection);
+
+  /* Text */
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Brand */
+  --color-primary: var(--primary);
+  --color-primary-hover: var(--primary-hover);
+  --color-primary-muted: var(--primary-muted);
+
+  /* Borders */
+  --color-border: var(--border);
+
+  /* Semantic / Data Viz */
+  --color-score-high: var(--score-high);
+  --color-score-medium: var(--score-medium);
+  --color-score-low: var(--score-low);
+
+  --color-tarob-green:var(--tarob-green);
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: "Bricolage Grotesque", sans-serif;
+  font-optical-sizing: auto;
+}
+
+
+/* glass effect css: linear-gradient(135deg, rgba(157, 179, 221, .28), hsla(0, 0%, 100%, .28)) */
+
+/* ── Toast animations ── */
+@keyframes toast-slide-in {
+  from {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes toast-slide-out {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+}
+
+@keyframes toast-progress {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.toast-enter {
+  animation: toast-slide-in 0.32s ease-out forwards;
+}
+
+.toast-exit {
+  animation: toast-slide-out 0.3s ease-in forwards;
+}
+
+
+/* click animation */
+
+.btnClickAnimation:active, .btnClickAnimation:focus {
+  transform: scale(0.95);
+  transition: transform 0.1s ease-in-out;
+}
+
+/* ── Footer reveal animations ── */
+@keyframes footer-reveal {
+  from {
+    opacity: 0;
+    transform: translateY(60px) scale(0.97);
+    filter: blur(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+
+@keyframes footer-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.footer-hidden .footer-wordmark,
+.footer-hidden .footer-tagline,
+.footer-hidden .footer-bottom {
+  opacity: 0;
+}
+
+.footer-visible .footer-wordmark {
+  animation: footer-reveal 1s cubic-bezier(0.16, 1, 0.3, 1) 0.05s forwards;
+}
+
+.footer-visible .footer-tagline {
+  animation: footer-fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) 0.4s forwards;
+}
+
+.footer-visible .footer-bottom {
+  animation: footer-fade-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) 0.65s forwards;
+}
