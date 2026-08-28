@@ -1,20 +1,16 @@
 import { Link } from 'react-router-dom';
-// import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function FeatureBlockAndFooter() {
-//   const { isAuthenticated } = useAuth();
-const isAuthenticated = false; 
+  const { isAuthenticated, user } = useAuth();
 
   return (
     <>
       {/* Differentiator / Feature Block */}
       <section className="py-24 relative bg-[linear-gradient(180deg,var(--bg-surface)_0%,transparent_100%)] px-4 sm:px-6 lg:px-8 my-20">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-surface border border-border rounded-3xl overflow-hidden shadow-sm relative group">
+          <div className="bg-surface my-10 border border-border rounded-3xl overflow-hidden shadow-sm relative group">
             
-            {/* Subtle background glow that follows the theme */}
-            <div className="absolute top-0 right-0 w-125 h-125 bg-primary/5 blur-[100px] rounded-full pointer-events-none"></div>
-
             <div className="grid grid-cols-1 lg:grid-cols-2 items-center">
               
               {/* Left Content */}
@@ -29,7 +25,7 @@ const isAuthenticated = false;
                   Stop losing your tailored resumes. FitCheck saves every analysis, score, and suggestion to your dashboard. Revisit past matches, track your improvement, and build a repository of optimized bullet points.
                 </p>
                 <Link
-                  to={isAuthenticated ? "/analyzer" : "/signup"}
+                  to={isAuthenticated ? `/dashboard/user/${user.name}` : "/signup"}
                   className="inline-flex items-center justify-center px-6 py-3 bg-text-main text-surface font-medium rounded-lg hover:opacity-90 transition-opacity shadow-sm"
                 >
                   {isAuthenticated ? "Go to Dashboard" : "Create your free account"}
@@ -37,13 +33,9 @@ const isAuthenticated = false;
               </div>
 
               {/* Right Visual: Abstract History List */}
-              <div className="relative h-full min-h-100 bg-deep border-l border-border p-8 lg:p-12 flex flex-col justify-center gap-4 overflow-hidden">
-                {/* Fade overlays for the edges */}
-                <div className="absolute top-0 left-0 w-full h-12 bg-linear-to-b from-deep to-transparent z-10"></div>
-                <div className="absolute bottom-0 left-0 w-full h-12 bg-linear-to-t from-deep to-transparent z-10"></div>
-
+              <div className="h-full min-h-100 bg-deep border-l border-border p-8 lg:p-12 flex flex-col justify-center gap-4 overflow-hidden">
                 {/* History Item 1: High Score */}
-                <div className="bg-surface border border-border rounded-xl p-4 shadow-sm flex items-center gap-4 transform transition-transform duration-500 hover:scale-[1.02] hover:border-score-high/30 hover:shadow-score-high/5">
+                <div className="bg-main dark:bg-surface border border-border rounded-xl p-4 shadow-sm flex items-center gap-4 transform transition-transform duration-500 hover:scale-[1.02] hover:border-score-high/30 hover:shadow-score-high/5">
                   <div className="w-12 h-12 rounded-full border-[3px] border-score-high/20 flex items-center justify-center">
                     <span className="text-score-high font-bold text-sm">85</span>
                   </div>
@@ -55,7 +47,7 @@ const isAuthenticated = false;
                 </div>
 
                 {/* History Item 2: Medium Score */}
-                <div className="bg-surface border border-border rounded-xl p-4 shadow-sm flex items-center gap-4 transform transition-transform duration-500 hover:scale-[1.02] hover:border-score-medium/30 hover:shadow-score-medium/5">
+                <div className="bg-main dark:bg-surface border border-border rounded-xl p-4 shadow-sm flex items-center gap-4 transform transition-transform duration-500 hover:scale-[1.02] hover:border-score-medium/30 hover:shadow-score-medium/5">
                   <div className="w-12 h-12 rounded-full border-[3px] border-score-medium/20 flex items-center justify-center">
                     <span className="text-score-medium font-bold text-sm">68</span>
                   </div>
@@ -67,7 +59,7 @@ const isAuthenticated = false;
                 </div>
 
                 {/* History Item 3: Low Score */}
-                <div className="bg-surface border border-border rounded-xl p-4 shadow-sm flex items-center gap-4 transform transition-transform duration-500 hover:scale-[1.02] hover:border-score-low/30 hover:shadow-score-low/5 opacity-60">
+                <div className="bg-main dark:bg-surface border border-border rounded-xl p-4 shadow-sm flex items-center gap-4 transform transition-transform duration-500 hover:scale-[1.02] hover:border-score-low/30 hover:shadow-score-low/5 opacity-60">
                   <div className="w-12 h-12 rounded-full border-[3px] border-score-low/20 flex items-center justify-center">
                     <span className="text-score-low font-bold text-sm">42</span>
                   </div>

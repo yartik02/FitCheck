@@ -12,7 +12,8 @@ import { light, dark, hamburger, closeIcon } from "../utils/Icons.jsx";
 // };
 
 export default function Navbar() {
-  const { user, isAuthenticated } = useAuth();
+  const { user } = useAuth();
+  let isLoggedIn = !!user;
   const [dropdownOpen, setDropdownOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -67,7 +68,7 @@ export default function Navbar() {
 
           {/* Desktop Navigation */}
           <nav className="hidden md:flex items-center gap-4">
-            {isAuthenticated ? (
+            {isLoggedIn ? (
               <>
                 {/* Dashboard / History Link */}
                 <Link
@@ -220,7 +221,7 @@ export default function Navbar() {
       {mobileMenuOpen && (
         <div className="md:hidden border-t border-border bg-main/95 backdrop-blur-lg">
           <div className="px-4 py-4 space-y-3">
-            {isAuthenticated ? (
+            {isLoggedIn ? (
               <>
                 <Link
                   to="/dashboard"

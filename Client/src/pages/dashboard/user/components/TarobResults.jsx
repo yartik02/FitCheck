@@ -441,7 +441,7 @@ export default function TarobResults({
                   return (
                     <div
                       key={idx}
-                      className="relative flex flex-col md:flex-row items-start py-8 md:py-12 group w-full"
+                      className="relative flex flex-col md:flex-row items-start py-8 md:py-20 group w-full"
                     >
                       {/* Node Tracker */}
                       <div className="hidden sm:flex absolute left-7 md:left-10.5 top-12 md:top-14 -translate-x-1/2 w-3 h-3 rounded-full ring-8 ring-main z-10 transition-all duration-700 ease-out items-center justify-center bg-surface group-hover:scale-125">
@@ -467,7 +467,7 @@ export default function TarobResults({
                       {/* Right Tasks Col */}
                       <div className="w-full flex-1 py-4">
                         <h4
-                          className={`text-2xl md:text-4xl mb-6 font-bold tracking-tight transition-colors duration-300 text-text-main/80 group-hover:text-text-main`}
+                          className={`text-2xl md:text-4xl mb-10 font-bold tracking-tight transition-colors duration-300 text-text-main/80 group-hover:text-text-main`}
                         >
                           {week.focus}
                         </h4>

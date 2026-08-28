@@ -6,12 +6,15 @@ import { useNavigate } from "react-router-dom";
 import HowItWorks from "../components/HowItWorks";
 import FeatureBlockAndFooter from "../components/Featured";
 import { scrollArrow } from "../utils/Icons";
-// import { useAuth } from '../context/AuthContext';
+import { useAuth } from '../context/AuthContext';
 
 export default function Home() {
-  const isAuthenticated = false;
+  const {isAuthenticated, user} = useAuth();
   const { theme } = useTheme();
   const navigate = useNavigate();
+  const resolvedTheme = theme === "system"
+    ? document.documentElement.getAttribute("data-theme")
+    : theme;
 
   return (
     <div className="bg-main flex flex-col justify-center">
@@ -30,7 +33,7 @@ export default function Home() {
             </p>
             <button
               className="bg-primary p-3 sm:p-4 px-4 sm:px-5 rounded-xl my-3 text-base sm:text-lg text-gray-50 hover:bg-primary-hover hover:-translate-y-0.75 transition-all cursor-pointer"
-              onClick={() => navigate(isAuthenticated ? "/analyze" : "/signUp")}
+              onClick={() => navigate(isAuthenticated ? `/dashboard/user/${user.name}` : "/signUp")}
             >
               Start Analyzing
             </button>
@@ -42,7 +45,7 @@ export default function Home() {
 
           <div className="absolute inset-0 z-0 md:block">
             <img
-              src={theme === "dark" ? BannerDark2 : BannerLight}
+              src={resolvedTheme === "dark" ? BannerDark2 : BannerLight}
               alt="FitCheck Interface"
               className="absolute bottom-0 right-0 object-contain w-[95vw] sm:w-150 md:w-170 lg:w-220 max-w-none"
             />

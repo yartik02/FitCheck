@@ -354,7 +354,7 @@ export default function TarobPrep() {
 
               {file ? (
                 <div className="h-full flex flex-col items-center justify-center border border-tarob-green/30 bg-tarob-green/2 rounded-3xl p-8 text-center transition-all relative overflow-hidden shadow-[inset_0_0_20px_rgba(16,185,129,0.02)]">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_top_right,var(--color-emerald-500)_0%,transparent_70%)] opacity-10"></div>
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-[radial-gradient(circle_at_top_right,var(--color-tarob-green)_0%,transparent_70%)] opacity-10"></div>
 
                   <div className="w-14 h-14 rounded-2xl text-tarob-green bg-surface border border-border/80 flex items-center justify-center mb-5 shadow-sm relative z-10">
                     <Icons.FileReady className="w-6 h-6" />

@@ -148,7 +148,7 @@ const LogCard = ({ log, user, setOpenLogDetails, setIsRezerClicked }) => {
     : "hover:border-tarob-green/40";
   const hoverShadowColor = isRezer
     ? "hover:shadow-primary/5"
-    : "hover:shadow-emerald-500/5";
+    : "hover:shadow-tarob-green/5";
 
   return (
     <div

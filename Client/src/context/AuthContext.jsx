@@ -14,9 +14,9 @@ export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();
   const [user, setUser] = useState(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const [allAnalysis, setAllAnalysis] = useState(null);
+  const [allAnalysis, setAllAnalysis] = useState([]);
   const [recent2rezerScans, setRecent2rezerScans] = useState([]);
-  const [recent2tarobScans, setRecent2tarobScans] = useState([]);
+  const [recent2tarobScans, setRecent2tarobScans] = useState([]); 
 
   const deriveRecentScans = useCallback((analysisData) => {
     const allItems = Array.isArray(analysisData) ? analysisData : [];
@@ -52,19 +52,14 @@ export const AuthProvider = ({ children }) => {
       });
       if (response.ok) {
         const data = await response.json();
-        setAllAnalysis(data.allAnalysis);
-        deriveRecentScans(data.allAnalysis);
+        const analysisData = Array.isArray(data.allAnalysis) ? data.allAnalysis : [];
+        setAllAnalysis(analysisData);
+        deriveRecentScans(analysisData);
       }
     } catch (error) {
       console.error("Error fetching analysis history:", error);
     }
   }, [deriveRecentScans]);
-
-  useEffect(() => {
-    if (allAnalysis) {
-      deriveRecentScans(allAnalysis);
-    }
-  }, [allAnalysis, deriveRecentScans]);
 
   const userAuthentication = useCallback(async () => {
     try {
@@ -103,13 +98,24 @@ export const AuthProvider = ({ children }) => {
       console.error("Logout request failed:", error);
     } finally {
       setUser(null);
-      navigate("/login");
+      setIsAuthenticated(false);
+      navigate("/");
     }
-  }, []);
+  }, [navigate]);
 
   useEffect(() => {
     userAuthentication();
   }, [userAuthentication]);
+
+  useEffect(() => {
+    if (user?._id) {
+      fetchAllAnalysis(user._id);
+    } else {
+      setAllAnalysis([]);
+      setRecent2rezerScans([]);
+      setRecent2tarobScans([]);
+    }
+  }, [user, fetchAllAnalysis]);
 
   const refreshAllAnalysis = useCallback(() => {
     if (user?._id) {

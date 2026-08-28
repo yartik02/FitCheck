@@ -23,14 +23,14 @@ const TAROBPREP_FEATURES = [
   {
     title: "Target-Role Skill Gap Analysis",
     description: "Prioritized mapping of what you lack to reach your specific goal.",
-    color: "text-emerald-500",
-    bg: "bg-emerald-500/10",
+    color: "text-tarob-green",
+    bg: "bg-tarob-green/10",
   },
   {
     title: "AI Mock Generation",
     description: "Auto-generated technical & behavioral questions mirroring the company's style.",
-    color: "text-emerald-500",
-    bg: "bg-emerald-500/10",
+    color: "text-tarob-green",
+    bg: "bg-tarob-green/10",
   },
 ];
 
@@ -54,7 +54,7 @@ const CheckIcon = ({ className }) => (
 );
 
 export default function ProductsPage() {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, user } = useAuth();
 
   return (
     <div className="bg-main min-h-screen font-sans selection:bg-primary/20 selection:text-primary overflow-hidden">
@@ -87,8 +87,8 @@ export default function ProductsPage() {
             Explore Rezer (Diagnostic)
           </a>
           <div className="hidden sm:block w-px h-6 bg-border"></div>
-          <a href="#tarobprep" className="group flex items-center gap-3 text-sm font-semibold text-text-main hover:text-emerald-500 transition-colors">
-            <span className="w-8 h-8 rounded-full bg-emerald-500/10 flex items-center justify-center text-emerald-500 group-hover:bg-emerald-500 group-hover:text-white transition-colors">2</span>
+          <a href="#tarobprep" className="group flex items-center gap-3 text-sm font-semibold text-text-main hover:text-tarob-green transition-colors">
+            <span className="w-8 h-8 rounded-full bg-tarob-green/10 flex items-center justify-center text-tarob-green group-hover:bg-tarob-green group-hover:text-white transition-colors">2</span>
             Explore TarobPrep (Preparation)
           </a>
         </div>
@@ -127,7 +127,7 @@ export default function ProductsPage() {
           <div className="flex-1 w-full relative z-10 group">
             <div className="relative z-10 group bg-surface border border-border rounded-2xl p-6 overflow-hidden transition-all duration-500 ease-out hover:-translate-y-1.5 hover:shadow-xl hover:border-primary/30">
               <div className="absolute inset-0 pointer-events-none overflow-hidden rounded-2xl">
-                <div className="absolute top-0 left-[-150%] w-[50%] h-full bg-linear-to-r from-transparent via-emerald-500/15 dark:via-white/10 to-transparent skew-x-[-30deg] group-hover:left-[200%] transition-all duration-1000 ease-in-out"></div>
+                <div className="absolute top-0 left-[-150%] w-[50%] h-full bg-linear-to-r from-transparent via-tarob-green/15 dark:via-white/10 to-transparent skew-x-[-30deg] group-hover:left-[200%] transition-all duration-1000 ease-in-out"></div>
               </div>
               <div className="absolute inset-0 bg-linear-to-br from-primary/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
 
@@ -171,18 +171,18 @@ export default function ProductsPage() {
       {/* 3. TAROBPREP: THE PREPARATION PRODUCT */}
       <section id="tarobprep" className="py-24 px-6 lg:px-12 max-w-7xl mx-auto scroll-mt-20">
         <div className="bg-linear-to-bl from-surface to-score-high/50 border border-border rounded-4xl p-8 lg:p-16 shadow-sm flex flex-col-reverse lg:flex-row items-center gap-16 relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-125 h-125 bg-emerald-500/5 blur-[100px] rounded-full pointer-events-none"></div>
+          <div className="absolute top-0 left-0 w-125 h-125 bg-tarob-green/5 blur-[100px] rounded-full pointer-events-none"></div>
 
           <div className="flex-1 w-full relative z-10 group perspective-1000">
             <div className="relative w-full max-w-md mx-auto min-h-120 mt-8 lg:mt-0">
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-emerald-500/10 blur-[80px] rounded-full pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100 z-0"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-tarob-green/10 blur-[80px] rounded-full pointer-events-none transition-opacity duration-700 opacity-50 group-hover:opacity-100 z-0"></div>
 
               {/* Back Card */}
               <div className="absolute -top-5 -right-10 w-[85%] bg-surface border border-border rounded-2xl p-5 shadow-sm transform transition-all duration-700 group-hover:translate-x-3 group-hover:-translate-y-6 group-hover:scale-1.05 group-hover:rotate-2 opacity-90 hover:opacity-100 z-10">
                 <div className="flex justify-between items-center mb-4 border-b border-border/50 pb-3">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
-                      <svg className="w-4 h-4 text-emerald-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <div className="w-8 h-8 rounded-lg bg-tarob-green/10 flex items-center justify-center border border-tarob-green/20">
+                      <svg className="w-4 h-4 text-tarob-green" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         {targetIcon}
                       </svg>
                     </div>
@@ -191,16 +191,16 @@ export default function ProductsPage() {
                       <p className="text-sm font-bold text-text-main leading-none">Google • SDE 2</p>
                     </div>
                   </div>
-                  <span className="text-[10px] font-mono bg-emerald-500/10 text-emerald-600 px-2 py-1 rounded font-medium border border-emerald-500/20 shadow-sm">4-Week Plan</span>
+                  <span className="text-[10px] font-mono bg-tarob-green/10 text-emerald-600 px-2 py-1 rounded font-medium border border-tarob-green/20 shadow-sm">4-Week Plan</span>
                 </div>
                 
                 <div className="space-y-3">
                   <div className="flex justify-between items-center">
                     <p className="text-[10px] font-bold text-text-main uppercase tracking-widest">Curriculum Progress</p>
-                    <p className="text-[10px] font-mono text-emerald-500 font-bold">Week 1/4</p>
+                    <p className="text-[10px] font-mono text-tarob-green font-bold">Week 1/4</p>
                   </div>
                   <div className="h-1.5 w-full bg-main border border-border rounded-full overflow-hidden flex">
-                    <div className="w-1/4 bg-emerald-500 rounded-full relative">
+                    <div className="w-1/4 bg-tarob-green rounded-full relative">
                       <div className="absolute inset-0 bg-white/20 animate-pulse"></div>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function ProductsPage() {
               <div className="absolute top-28 left-0 w-[92%] bg-surface/90 backdrop-blur-xl border border-border rounded-2xl shadow-2xl overflow-hidden transform transition-all duration-700 group-hover:scale-[1.02] group-hover:-translate-y-2  z-20">
                 <div className="px-5 py-4 border-b border-border bg-main/50 flex justify-between items-center">
                   <span className="text-[10px] font-bold text-text-muted uppercase tracking-widest">Module 01 • Technical Setup</span>
-                  <span className="text-[10px] font-mono text-emerald-600 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded shadow-sm">Action Required</span>
+                  <span className="text-[10px] font-mono text-emerald-600 bg-tarob-green/10 border border-tarob-green/20 px-2 py-0.5 rounded shadow-sm">Action Required</span>
                 </div>
 
                 <div className="p-5 sm:p-6">
@@ -238,13 +238,13 @@ export default function ProductsPage() {
                   <div className="space-y-3 mb-6">
                     {PRACTICE_QUESTIONS.map((q) => (
                       <div key={q.id} className="flex gap-3 items-start bg-main/50 p-3 rounded-xl border border-border/50">
-                        <span className="text-[10px] sm:text-xs font-mono text-emerald-500 font-bold mt-0.5 shrink-0">{q.id}</span>
+                        <span className="text-[10px] sm:text-xs font-mono text-tarob-green font-bold mt-0.5 shrink-0">{q.id}</span>
                         <p className="text-xs sm:text-sm text-text-main font-medium leading-snug">{q.text}</p>
                       </div>
                     ))}
                   </div>
 
-                  <button className="w-full group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-text-main px-4 py-3 text-surface font-semibold text-xs shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all hover:bg-emerald-600 dark:hover:bg-emerald-500">
+                  <button className="w-full group/btn relative flex items-center justify-center gap-2 overflow-hidden rounded-xl bg-text-main px-4 py-3 text-surface font-semibold text-xs shadow-[0_0_15px_rgba(0,0,0,0.1)] transition-all hover:bg-emerald-600 dark:hover:bg-tarob-green">
                     <CheckIcon className="w-4 h-4 text-surface transition-transform group-hover/btn:scale-110" />
                     Mark Module Complete
                   </button>
@@ -255,8 +255,8 @@ export default function ProductsPage() {
 
           <div className="flex-1 w-full relative z-10">
             <div className="inline-flex items-center gap-2 mb-6">
-              <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
-              <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-500">Product 02</span>
+              <span className="w-2.5 h-2.5 rounded-full bg-tarob-green animate-pulse"></span>
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-tarob-green">Product 02</span>
             </div>
             <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-text-main mb-6">TarobPrep.</h2>
             <p className="text-lg text-text-muted font-light leading-relaxed mb-8">
@@ -285,15 +285,15 @@ export default function ProductsPage() {
         <div className="wrapper relative overflow-hidden py-32 px-6 lg:px-12 border w-3/4 mx-auto rounded-[4rem] border-gray-700/10 bg-gray-400/5">
           <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-4xl h-full flex justify-center blur-[120px] opacity-20 pointer-events-none">
             <div className="w-1/2 h-full bg-primary rounded-full"></div>
-            <div className="w-1/2 h-full bg-emerald-500 rounded-full"></div>
+            <div className="w-1/2 h-full bg-tarob-green rounded-full"></div>
           </div>
 
           <div className="max-w-2xl mx-auto relative z-10">
             <h2 className="text-4xl font-bold text-text-main tracking-tight mb-4">Start building your leverage.</h2>
             <p className="text-lg text-text-muted mb-10">One account. All your analyses, resumes, and prep history saved securely.</p>
             <Link
-              to={isAuthenticated ? "/dashboard" : "/signup"}
-              className="inline-flex items-center justify-center px-10 py-4 bg-text-main text-surface text-base font-bold rounded-xl hover:scale-105 transition-transform duration-300 shadow-xl"
+              to={isAuthenticated ? `/dashboard/user/${user.name}` : "/signup"}
+              className="inline-flex items-center justify-center px-10 py-4 bg-text-main/80 text-surface text-base font-bold rounded-xl hover:scale-105 hover:bg-text-main transition-all duration-300 shadow-xl"
             >
               {isAuthenticated ? "Enter the Ecosystem" : "Create your free account"}
             </Link>
