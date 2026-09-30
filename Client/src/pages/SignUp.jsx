@@ -176,7 +176,7 @@ export default function Signup() {
     <div className="min-h-screen w-screen relative flex items-center justify-center bg-surface px-4 py-12">
       {/* back button */}
       <button
-        className="absolute top-4 sm:top-10 btnClickAnimation shadow-sm left-4 sm:left-10 bg-main hover:bg-gray-400/50 font-medium flex items-center gap-1 px-3 sm:px-5 py-2 rounded-full text-text-main transition-colors cursor-pointer z-10"
+        className="absolute top-4 sm:top-10 btnClickAnimation left-4 sm:left-10 bg-main hover:bg-gray-400/50 font-medium flex items-center gap-1 px-3 sm:px-5 py-2 rounded-full text-text-main transition-colors cursor-pointer z-10"
         onClick={() => navigate(-1)}
       >
         <svg
@@ -199,7 +199,7 @@ export default function Signup() {
       {/* toggleTheme button */}
       <span className="my-auto absolute top-4 sm:top-10 right-4 sm:right-10 z-10">
         <p
-          className="flex align-center m-0 p-2 btnClickAnimation shadow-sm rounded-circle rounded-full bg-main hover:bg-gray-400/40 transition-all"
+          className="flex align-center m-0 p-2 btnClickAnimation rounded-circle rounded-full bg-main hover:bg-gray-400/40 transition-all"
           role="button"
           onClick={toggleTheme}
           style={{ cursor: "pointer", height: "fit-content" }}

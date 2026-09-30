@@ -348,7 +348,7 @@ export default function Settings() {
   };
 
   return (
-    <div className="max-w-6xl mx-auto pr-4 sm:pr-6 lg:pr-8 py-8 lg:py-10 w-full animate-in fade-in duration-700">
+    <div className={`max-w-6xl mx-auto py-8 pb-18 lg:py-10 w-full animate-in fade-in duration-700 ${isModalOpen ? "overflow-hidden" : ""}`}>
       {/* 1. Header Section */}
       <div className="mb-16 border-b border-border/60 pb-10">
         <div className="flex items-center gap-3 mb-6">
@@ -382,7 +382,7 @@ export default function Settings() {
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
         {/* 2. Left Column: Navigation (Span 4) */}
-        <div className="lg:col-span-4">
+        <div className="lg:col-span-4 hidden md:block">
           <nav className="flex flex-col gap-2 sticky top-24">
             {TABS.map((tab) => (
               <button
@@ -401,6 +401,27 @@ export default function Settings() {
               </button>
             ))}
           </nav>
+        </div>
+
+        <div className="w-full bg-main md:hidden overflow-x-auto pb-2 hide-scrollbar pt-2 sticky top-0 z-20">
+          <div className="flex items-center gap-2 w-max">
+            {TABS.map((tab) => (
+              <button
+                key={tab.id}
+                onClick={() => setActiveTab(tab.id)}
+                className={`flex items-center gap-3 px-4 py-3.5 rounded-xl transition-all duration-300 text-left ${
+                  activeTab === tab.id
+                    ? "bg-surface border border-border/80 shadow-[0_2px_10px_rgba(0,0,0,0.02)] text-text-main"
+                    : "border border-transparent text-text-muted hover:bg-surface hover:text-text-main"
+                }`}
+              >
+                <tab.icon
+                  className={`w-4 h-4 ${activeTab === tab.id ? "text-primary" : "text-text-muted"}`}
+                />
+                <span className="text-sm font-semibold">{tab.label}</span>
+              </button>
+            ))}
+          </div>
         </div>
 
         {/* 3. Right Column: Content (Span 8) */}
@@ -512,7 +533,7 @@ export default function Settings() {
                           </p>
                         </div>
                       </div>
-                      <div className="flex items-center gap-3 shrink-0">
+                      <div className="flex items-center gap-3 shrink-0 mx-auto sm:mx-0">
                         <button
                           onClick={handleViewResume}
                           className="px-4 py-2 bg-primary text-white text-xs font-semibold rounded-lg shadow-sm hover:bg-primary-hover transition-colors cursor-pointer"
@@ -716,7 +737,7 @@ export default function Settings() {
 
       {/* View Resume Modal */}
       {isModalOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
+        <div className="fixed inset-0 z-200 flex items-center justify-center bg-black/60 backdrop-blur-sm p-4 animate-in fade-in duration-200">
           <div className="bg-surface border border-border/80 rounded-2xl shadow-2xl w-full max-w-5xl h-[85vh] flex flex-col overflow-hidden relative">
             <div className="flex justify-between items-center px-6 py-4 border-b border-border/50 bg-surface">
               <h3 className="font-semibold text-text-main flex items-center gap-2">

@@ -17,7 +17,6 @@
   --text-muted: #6b7280;
   --border: #e5e7eb;
 
-  /* Semantic (For your 0-100 radial gauge & chips) */
   --score-high: #1c9750;       /* Green (75+) */
   --score-medium: #f59e0b;     /* Amber (50-74) */
   --score-low: #ef4444;        /* Red (<50) */
@@ -27,17 +26,16 @@
 
 [data-theme="dark"] {
   /* Dark Theme Foundations */
-  --bg-main: #000000;          /* Deepened slightly from #101010 for higher contrast */
-  --bg-surface: #171717;       /* Replaced #181818 to align with standard Zinc scaling */
+  --bg-main: #000000;          
+  --bg-surface: #171717; 
   --deep-bg: #050505;
-  --bg-heroSection: #000000;   /* Keeping your original banner color */
+  --bg-heroSection: #000000;
 
   /* Text & Borders */
   --text-main: #efefef;
   --text-muted: #a1a1aa;
   --border: #27272a;
 
-  /* Semantic adjustments for dark mode readability */
   --score-high: #2e8452;
   --score-medium: #d09a11;
   --score-low: #f03232;
@@ -80,7 +78,7 @@ body {
 }
 
 
-/* glass effect css: linear-gradient(135deg, rgba(157, 179, 221, .28), hsla(0, 0%, 100%, .28)) */
+/* linear-gradient(135deg, rgba(157, 179, 221, .28), hsla(0, 0%, 100%, .28)) */
 
 /* ── Toast animations ── */
 @keyframes toast-slide-in {

@@ -254,7 +254,7 @@ export default function Rezer() {
   // VIEW 1: TACTILE WORKSPACE
   if (view === "input") {
     return (
-      <div className="max-w-6xl mx-auto pr-4 sm:pr-6 lg:pr-8 py-8 lg:py-10 w-full animate-in fade-in duration-700">
+      <div className="max-w-6xl mx-auto pb-18 py-8 lg:py-10 w-full animate-in fade-in duration-700">
         {/* Error Banner */}
         {/* {error && (
           <div className="mb-6 p-4 rounded-xl bg-red-500/10 border border-red-500/20 flex items-center justify-between">

@@ -287,7 +287,7 @@ export default function TarobPrep() {
 
   if (view === "input") {
     return (
-      <div className="max-w-6xl mx-auto pr-4 sm:pr-6 lg:pr-8 py-8 lg:py-10 w-full animate-in fade-in duration-700">
+      <div className="max-w-6xl mx-auto pb-18 py-8 lg:py-10 w-full animate-in fade-in duration-700">
         {/* Header */}
         <div className="mb-16">
           <div className="flex items-center gap-3 mb-6">

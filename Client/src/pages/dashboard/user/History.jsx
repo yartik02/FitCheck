@@ -243,7 +243,7 @@ export default function HistoryPage() {
   );
 
   return (
-    <div className="max-w-6xl mx-auto pr-4 sm:pr-6 lg:pr-8 py-8 lg:py-10 w-full animate-in fade-in duration-700">
+    <div className="max-w-6xl mx-auto pb-18 py-8 lg:py-10 w-full animate-in fade-in duration-700">
       {/* 1. Header Section */}
       <div className="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
         <div>
@@ -265,14 +265,14 @@ export default function HistoryPage() {
       </div>
 
       {/* 2. Segmented Filter Control */}
-      <div className="mb-12 border-b border-border/60 pb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
+      <div className="mb-12 w-full border-b border-border/60 pb-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6">
         <div
-          className="flex gap-1 bg-surface border border-border/80 rounded-xl p-1"
+          className="flex gap-2 bg-surface border border-border/80 rounded-xl p-1 max-w-full overflow-auto hide-scrollbar"
           style={{ boxShadow: "inset -5px 4px 4px rgb(0 0 0 / 10%)" }}
         >
           <button
             onClick={() => setActiveTab("all")}
-            className={`px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
+            className={`px-6 py-2.5 text-[11px] text-nowrap font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
               activeTab === "all"
                 ? "bg-main/90 text-text-main shadow-md"
                 : "text-text-muted hover:text-text-main hover:bg-main/50"
@@ -283,7 +283,7 @@ export default function HistoryPage() {
 
           <button
             onClick={() => setActiveTab("rezer")}
-            className={`flex items-center gap-2 px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
+            className={`flex items-center text-nowrap gap-2 px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
               activeTab === "rezer"
                 ? "bg-primary/20 text-primary border border-primary/20 shadow-md"
                 : "text-text-muted hover:text-primary hover:bg-primary/5 border border-transparent"
@@ -295,7 +295,7 @@ export default function HistoryPage() {
 
           <button
             onClick={() => setActiveTab("tarob")}
-            className={`flex items-center gap-2 px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
+            className={`flex items-center text-nowrap gap-2 px-6 py-2.5 text-[11px] font-bold uppercase tracking-wider rounded-lg transition-all duration-300 ${
               activeTab === "tarob"
                 ? "bg-tarob-green/20 text-tarob-green border border-tarob-green/20 shadow-md"
                 : "text-text-muted hover:text-tarob-green hover:bg-tarob-green/5 border border-transparent"

@@ -1,28 +1,17 @@
 import Logo from "../../assets/FitCheckLogoNew.svg";
 import { Link } from "react-router-dom";
 import {
-  rezer,
-  tarob,
-  settings,
-  logout,
-  history
+  logout
 } from "../../utils/Icons";
 // import { useAuth } from "../../context/AuthContext";
 
-export default function SideMenu({ activeMenuItem, setActiveMenuItem }) {
-
-  const menuItems = [
-    { value: "Rezer", url: "./rezer", icon: rezer, name: "rezer" },
-    { value: "Tarob", url: "./tarob", icon: tarob, name: "tarob" },
-    { value: "History", url: "./history", icon: history, name: "history" },
-    { value: "Settings", url: "./settings", icon: settings, name: "settings" },
-  ];
+export default function SideMenu({menuItems, activeMenuItem, setActiveMenuItem }) {
 
   return (
-    <aside className="h-screen group w-20 p-5 text-nowrap overflow-hidden hover:w-70 transition-all duration-300 ease-in-out">
+    <aside className="h-screen group w-20 p-5 text-nowrap overflow-hidden hover:w-61 transition-all duration-300 ease-in-out">
       <div className="flex flex-col overflow-hidden h-full">
-        <div className="header flex align-center gap-3">
-          <img src={Logo} alt="Logo" className="w-10" />
+        <div className="header flex align-center gap-2">
+          <img src={Logo} alt="Logo" className="w-9" />
           <p className="text-4xl font-bold overflow-hidden max-w-0 group-hover:max-w-full whitespace-nowrap transition-all duration-400 ease-in-out">
             Fit<span className="text-primary">Check</span>
           </p>

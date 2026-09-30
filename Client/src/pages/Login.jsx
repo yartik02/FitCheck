@@ -12,14 +12,17 @@ export default function Login() {
   const toast = useToast();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
   const { setUser } = useAuth();
   const navigate = useNavigate();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     if (!email || !password) {
       // alert("Please fill in both email and password fields.");
       toast.warning("Please fill in both email and password fields.");
+      setLoading(false);
       return;
     }
     try {
@@ -51,15 +54,15 @@ export default function Login() {
       toast.error(error.message);
     }
 
+    setLoading(false);
     console.log("Login Data: ", { email, password });
-    // Redirect to the analyzer after "login"
   };
 
   return (
     <div className="min-h-screen w-screen relative flex items-center justify-center bg-surface px-4 py-12">
       {/* backbtn */}
       <button
-        className="absolute btnClickAnimation top-4 sm:top-20 left-4 sm:left-20 bg-main hover:bg-gray-400/50 font-medium flex items-center gap-1 px-3 sm:px-5 py-2 rounded-full shadow-sm text-text-main transition-colors cursor-pointer z-10"
+        className="absolute btnClickAnimation top-4 sm:top-20 left-4 sm:left-20 bg-main hover:bg-gray-400/50 font-medium flex items-center gap-1 px-3 sm:px-5 py-2 rounded-full text-text-main transition-colors cursor-pointer z-10"
         onClick={() => navigate(-1)}
       >
         <svg
@@ -82,7 +85,7 @@ export default function Login() {
       {/* toggleTheme button */}
       <span className="my-auto absolute top-4 sm:top-20 right-4 sm:right-20 z-10">
         <p
-          className="flex btnClickAnimation align-center m-0 p-2 rounded-circle rounded-full bg-main hover:bg-gray-400/40 shadow-sm transition-all"
+          className="flex btnClickAnimation align-center m-0 p-2 rounded-circle rounded-full bg-main hover:bg-gray-400/40 transition-all"
           role="button"
           onClick={toggleTheme}
           style={{ cursor: "pointer", height: "fit-content" }}
@@ -170,8 +173,9 @@ export default function Login() {
             <button
               type="submit"
               className="w-full bg-primary hover:bg-primary-hover text-white font-medium py-2.5 rounded-lg transition-colors shadow-sm mt-2 btnClickAnimation"
+              disabled={loading}
             >
-              Log In
+              {loading ? "Logging in..." : "Log In"}
             </button>
           </form>
 
