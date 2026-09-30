@@ -95,18 +95,6 @@ CLOUDINARY_API_KEY=your_api_key
 CLOUDINARY_API_SECRET=your_api_secret
 ```
  
-### Running Locally
- 
-```bash
-# From /server
-npm run dev
- 
-# From /client
-npm start
-```
- 
-The app will be available at `http://localhost:3000`, with the API running on `http://localhost:5000`.
- 
 ---
  
 ## Project Status
