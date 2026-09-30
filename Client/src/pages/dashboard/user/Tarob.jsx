@@ -548,20 +548,28 @@ export default function TarobPrep() {
               Recent 2 Prep Plans
             </span>
             <div className="flex flex-wrap gap-3">
-              {recent2tarobScans.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3 px-3 py-1.5 rounded-full border border-border/60 hover:border-text-muted/50 hover:bg-surface/50 transition-colors"
-                >
-                  <span className="text-[11px] font-medium text-text-main">
-                    {item.role}
-                  </span>
-                  <span className="w-px h-3 bg-border"></span>
-                  <span className="text-[10px] font-mono text-tarob-green">
-                    {item.timeline}
+              {recent2tarobScans.length > 0 ? (
+                recent2tarobScans.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 px-3 py-1.5 rounded-full border border-border hover:border-text-muted/50 hover:bg-surface/50 transition-colors"
+                  >
+                    <span className="text-[11px] font-medium text-text-main">
+                      {item.role}
+                    </span>
+                    <span className="w-px h-3 bg-text-muted/70"></span>
+                    <span className="text-[10px] font-mono text-tarob-green">
+                      {item.timeline}
+                    </span>
+                  </div>
+                ))
+              ) : (
+                <div className="flex items-center gap-3 px-3 py-1.5 rounded border border-dashed border-border bg-surface">
+                  <span className="text-[11px] font-medium text-text-muted italic">
+                    No recent plans found
                   </span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 

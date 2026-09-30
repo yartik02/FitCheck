@@ -16,26 +16,6 @@ import {
 } from "../../../utils/Icons";
 import { useToast } from "../../../utils/useToast";
 
-// 1. STATIC DATA
-// const RECENT_HISTORY = [
-//   {
-//     id: "h1",
-//     role: "Frontend Engineer",
-//     resumeName: "yartik_FE_resume_v2.pdf",
-//     company: "Linear",
-//     date: "2h ago",
-//     score: 85,
-//   },
-//   {
-//     id: "h2",
-//     role: "Fullstack Dev",
-//     resumeName: "yartik_MERN_resume_v3.pdf",
-//     company: "Vercel",
-//     date: "1d ago",
-//     score: 64,
-//   },
-// ];
-
 const LOADING_STEPS = [
   "Parsing PDF document structure...",
   "Extracting semantic nodes...",
@@ -495,20 +475,28 @@ export default function Rezer() {
               Recent 2 Scans
             </span>
             <div className="flex flex-wrap gap-3">
-              {recent2rezerScans.map((item, idx) => (
-                <div
-                  key={idx}
-                  className="flex items-center gap-3 px-3 py-1.5 rounded-full border border-border/60 hover:border-text-muted/50 hover:bg-surface/50 transition-colors"
-                >
-                  <span className="text-[11px] font-medium text-text-main">
-                    {item.resumeFileName}
-                  </span>
-                  <span className="w-px h-3 bg-border"></span>
-                  <span className="text-[10px] font-mono text-text-muted">
-                    {item.score}%
+              {recent2rezerScans.length > 0 ? (
+                recent2rezerScans.map((item, idx) => (
+                  <div
+                    key={idx}
+                    className="flex items-center gap-3 px-3 py-1.5 rounded-full border border-border hover:border-text-muted/50 hover:bg-surface/50 transition-colors"
+                  >
+                    <span className="text-[11px] font-medium text-text-main">
+                      {item.resumeFileName}
+                    </span>
+                    <span className="w-px h-3 bg-text-muted/70"></span>
+                    <span className="text-[10px] font-mono text-text-muted">
+                      {item.score}%
+                    </span>
+                  </div>
+                ))
+              ) : (
+                <div className="flex items-center gap-3 px-3 py-1.5 rounded border border-dashed border-border bg-surface">
+                  <span className="text-[11px] font-medium text-text-muted italic">
+                    No recent scans found
                   </span>
                 </div>
-              ))}
+              )}
             </div>
           </div>
 
@@ -528,11 +516,11 @@ export default function Rezer() {
   // VIEW 2: TERMINAL LOADING STATE
   if (view === "loading") {
     return (
-      <Loading 
-        loadingStep={loadingStep} 
-        steps={LOADING_STEPS} 
-        title="Rezer.exe // Process Active" 
-        theme="rezer" 
+      <Loading
+        loadingStep={loadingStep}
+        steps={LOADING_STEPS}
+        title="Rezer.exe // Process Active"
+        theme="rezer"
       />
     );
   }
