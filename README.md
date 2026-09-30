@@ -14,6 +14,11 @@
 FitCheck houses two integrated tools under a shared dashboard: **Rezer**, which scores how well your resume matches a job description, and **TarobPrep**, which turns that gap analysis into a structured interview prep plan.
  
 > Rezer is a mirror — it shows you where you stand. TarobPrep is a coach — it tells you what to do about it.
+>
+<h2>Live Demo</h2>
+<p>
+  Frontend: https://fitcheck-08mt.onrender.com<br/>
+Backend API: https://fitcheck-server-56qg.onrender.com</p>
  
 ---
  
