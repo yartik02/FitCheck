@@ -281,7 +281,7 @@ export default function TarobResults({
 
   return (
     <div
-      className={`max-w-6xl mx-auto w-full animate-in fade-in slide-in-from-bottom-8 duration-700 font-sans ${isHistoryReview ? "lg:px-0 py-20" : "lg:pr-8 py-8 pr-4 sm:pr-6 lg:py-16"}`}
+      className={`lg:max-w-7xl md:max-w-5xl mx-auto w-auto animate-in fade-in slide-in-from-bottom-8 duration-700 font-sans ${isHistoryReview ? "py-20" : "py-8 lg:py-16"}`}
     >
       {/* Utility Nav */}
       <button

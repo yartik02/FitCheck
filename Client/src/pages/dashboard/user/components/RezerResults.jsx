@@ -1,5 +1,4 @@
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import {
   arrowRightIcon,
   resetIcon,
@@ -158,7 +157,7 @@ export default function RezerResults({
 
   return (
     <div
-      className={`max-w-7xl mx-auto w-full animate-in fade-in slide-in-from-bottom-8 duration-700 ${isHistoryReport ? "lg:px-0 py-20 p" : " lg:pr-8 py-8 pr-4 sm:pr-6 lg:py-10"}`}
+      className={`lg:max-w-7xl md:max-w-5xl mx-auto w-auto animate-in fade-in slide-in-from-bottom-8 duration-700 ${isHistoryReport ? "py-20" : "py-8 lg:py-10"}`}
     >
       {/* Utility Nav */}
       <button
